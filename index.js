@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { TextField, Grid, createMuiTheme, ThemeProvider, useTheme, makeStyles, withStyles, fade, Tabs, Tab } from '@material-ui/core';
 import { blue, red, orange, green, indigo } from '@material-ui/core/colors'
-import PhoneIcon from '@material-ui/icons/Phone';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import PersonPinIcon from '@material-ui/icons/PersonPin';
+import Sidebar from './sidebar/Sidebar';
 
 const theme = createMuiTheme({
   palette: {
@@ -17,7 +15,7 @@ const theme = createMuiTheme({
 
 const useDrawerStyles = makeStyles (theme => ({
   root: {
-    backgroundColor: theme.palette.primary.main,
+    backgroundColor: indigo[900],
     height: '100vh'
   },
   tabRoot: {
@@ -40,39 +38,13 @@ const useDrawerStyles = makeStyles (theme => ({
 }))
 
 const App = () => {
-    const [value, setValue] = React.useState(0);
-    const handleChange = (event, newValue) => {
-      setValue(newValue);
-    };
     const classes = useDrawerStyles();
     return (
       <ThemeProvider theme={theme}>
         <div >
           <Grid container>
             <Grid item xs={3} md={2} lg={1}>
-              <Tabs
-                classes={{
-                  root: classes.root,
-                  indicator: classes.tabIndicator,
-                }}
-                orientation="vertical"
-                value={value}
-                onChange={handleChange}
-                aria-label="Vertical tabs example"
-              >
-            <Tab icon={<PhoneIcon className={classes.tabIcon} />} label="RECENTS" classes={{
-              root: classes.tabRoot,
-              labelIcon: classes.tabLabel,
-            }} />
-            <Tab icon={<FavoriteIcon className={classes.tabIcon} />} label="FAVORITES" classes={{
-              root: classes.tabRoot,
-              labelIcon: classes.tabLabel,
-            }} />
-            <Tab icon={<PersonPinIcon className={classes.tabIcon} />} label="NEARBY" classes={{
-              root: classes.tabRoot,
-              labelIcon: classes.tabLabel,
-            }} />
-          </Tabs>
+              <Sidebar classes={classes} />
             </Grid>
           </Grid>
         </div>
