@@ -3,6 +3,7 @@ import { Typography, Button } from "@material-ui/core";
 import HorizontalTabs from '../tabs/horizontalTabs';
 import UserCard from './UserCard';
 import UserSecurity from './UserSecurity';
+import UserTeams from './UserTeams'
 
 const UserSettings = () => {
   const [ value, setValue ] = React.useState(0);
@@ -42,7 +43,9 @@ const UserSettings = () => {
           />
         );
       case 2:
-        return <UserSecurity />
+        return <UserSecurity />;
+      case 3:
+        return <UserTeams />;
       default: 
     }
   }

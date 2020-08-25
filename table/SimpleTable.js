@@ -6,13 +6,17 @@ const SimpleTable = ({ className, headers, data, }) => {
     <Table size="small" className={className}>
       <TableHead>
         <TableRow>
-          {headers.map((header, index) => <TableCell key={index} align={index > 0 ? "right" : "left"}>{header}</TableCell>)}
+          {headers.map((header, index) => (
+            <TableCell key={index} align={index === headers.length - 1 ? "right" : "left"}>{header}</TableCell>
+          ))}
         </TableRow>
       </TableHead>
       <TableBody>
         {data.map((row, index) => (
           <TableRow key={index}>
-            {row.map((cell, index) => <TableCell key scope="row" align={index > 0 ? "right" : "left"}>{cell}</TableCell>)}
+            {row.map((cell, index) => (
+              <TableCell key scope="row" align={index === row.length - 1 ? "right" : "left"}>{cell}</TableCell>
+            ))}
           </TableRow>
         ))}
       </TableBody>
