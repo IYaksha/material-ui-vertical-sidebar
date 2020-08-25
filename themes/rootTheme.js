@@ -8,6 +8,9 @@ const theme = createMuiTheme({
     secondary: orange,
     error: red,
     success: green,
+  },
+  typography: {
+    fontFamily: 'Rubik',
   }
 });
 

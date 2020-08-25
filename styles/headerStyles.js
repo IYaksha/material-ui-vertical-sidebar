@@ -1,7 +1,7 @@
 import { makeStyles } from "@material-ui/core";
 import { white, blue } from "@material-ui/core/colors";
 
-const useHeaderStyles = makeStyles({
+const useHeaderStyles = makeStyles(theme => ({
   rootHeaderSearch: {
     flex: 1,
     display: 'flex',
@@ -10,9 +10,9 @@ const useHeaderStyles = makeStyles({
     flex: 1,
   },
   createServerButtonStyles: {
+    backgroundColor: theme.palette.success.main,
     color: "white",
-    backgroundColor: "blue",
   }
-});
+}));
 
 export default useHeaderStyles;
