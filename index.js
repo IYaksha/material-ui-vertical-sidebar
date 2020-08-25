@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { TextField, Grid, createMuiTheme, ThemeProvider, useTheme, makeStyles, withStyles, fade, Tabs, Tab } from '@material-ui/core';
 import { blue, red, orange, green, indigo } from '@material-ui/core/colors';
+import theme from './themes/rootTheme';
 import useDrawerStyles from "./styles/drawerStyles";
 import Sidebar from './sidebar/Sidebar';
-import theme from './themes/rootTheme';
+import RootHeader from './header/rootHeader';
 
 const App = () => {
     const classes = useDrawerStyles();
@@ -16,7 +17,7 @@ const App = () => {
               <Sidebar classes={classes} />
             </Grid>
             <Grid item xs={9} md={10} lg={11}>
-            
+              <RootHeader />
             </Grid>
           </Grid>
         </div>
