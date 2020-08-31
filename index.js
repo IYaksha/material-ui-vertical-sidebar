@@ -14,7 +14,7 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <div >
         <Grid container>
-          <Grid item xs={3} md={2} lg={1}>
+          <Grid item xs={3} md={1} lg={1}>
             <Sidebar classes={classes} />
           </Grid>
           <Grid item xs={9} md={10} lg={11}>
